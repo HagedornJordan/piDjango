@@ -1,5 +1,5 @@
 """
-WSGI config for farmkeepServer project.
+WSGI config for piDjango project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 from posixpath import dirname
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'farmkeepServer.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'piDjango.settings')
 
 application = get_wsgi_application()
