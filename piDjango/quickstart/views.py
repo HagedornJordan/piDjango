@@ -1,3 +1,4 @@
+from time import time
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
@@ -37,6 +38,8 @@ class OpenDoor(APIView) :
 class Blink(APIView) : 
     permission_classes = [permissions.AllowAny]
     def get(self, request, format=None):
-        blinkTest()    
+        blinks = request.GET.get('blinks', None)
+        timeBetween = request.GET.get('pause', None)
+        blinkTest(blinks, timeBetween)
         return Response ("just blinked!")
 
