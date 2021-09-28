@@ -38,8 +38,9 @@ class OpenDoor(APIView) :
 class Blink(APIView) : 
     permission_classes = [permissions.AllowAny]
     def get(self, request, format=None):
+        pin = request.GET.get('pin', None)
         blinks = request.GET.get('blinks', None)
         timeBetween = request.GET.get('pause', None)
-        blinkTest(blinks, timeBetween)
+        blinkTest(pin, blinks, timeBetween)
         return Response ("just blinked!")
 
