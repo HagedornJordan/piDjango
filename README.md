@@ -2,14 +2,15 @@
 Quickstart for running a Django server on a Raspberry Pi. Includes GPIO.
 
 ## Getting Started
-I was using Ubuntu Server 21.04 for development. Python3 was already installed, but if this is not the case for you you'll need to install it. 
+I was using Ubuntu Server 21.04 for development. Follow the guide [here](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview) to install Ubuntu on your pi.  
+Python3 was already installed, but if this is not the case for you you'll need to install it. 
 
 1. Clone this repo  
 `git clone https://github.com/HagedornJordan/piDjango`
 2. Install dependencies.  
 `sudo apt-get update`  
 `sudo apt-get install python3-venv`
-3. Create your python virtual environment and activate it.
+3. Create your python virtual environment and activate it.  
 `cd piDjango`  
 `python3 -m venv env`  
 `source env/bin/activate`  
@@ -24,7 +25,7 @@ I was using Ubuntu Server 21.04 for development. Python3 was already installed, 
 `python manage.py migrate`  
 8. Run the server. Note, to access from other machines, you'll want to add your pi's IP to your list of `ALLOWED_HOSTS` (example: ALLOWED_HOSTS=['192.168.88.231',])  
 `python mangage.py runserver 0.0.0.0:8000` 
-9. Test it out. In a browser (within the same network) send the request `http://192.168.88.231:8000/blink/?pin=23&blinks=5&pause=.25` Your LED connected to pin 23 should blink 5 times with a .25 second delay. 
+9. Test it out. Copy the wiring example below. In a browser (within the same network) send the request `http://192.168.88.231:8000/blink/?pin=23&blinks=5&pause=.25` Your LED connected to pin 23 should blink 5 times with a .25 second delay. 
 
 
 ## Wiring example for blink.py
