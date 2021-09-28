@@ -2,14 +2,15 @@
 Quickstart for running a Django server on a Raspberry Pi. Includes GPIO.
 
 ## Getting Started
-I was using Ubuntu Server 21.04 for development. Python3 was already installed, but if this is not the case for you you'll need to install it. 
+I was using Ubuntu Server 21.04 for development. Follow the guide [here](https://ubuntu.com/tutorials/how-to-install-ubuntu-on-your-raspberry-pi#1-overview) to install Ubuntu on your pi.  
+Python3 was already installed, but if this is not the case for you you'll need to install it. 
 
 1. Clone this repo  
 `git clone https://github.com/HagedornJordan/piDjango`
 2. Install dependencies.  
 `sudo apt-get update`  
 `sudo apt-get install python3-venv`
-3. Create your python virtual environment and activate it.
+3. Create your python virtual environment and activate it.  
 `cd piDjango`  
 `python3 -m venv env`  
 `source env/bin/activate`  
