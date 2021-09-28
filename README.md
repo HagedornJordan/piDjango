@@ -22,5 +22,11 @@ I was using Ubuntu Server 21.04 for development. Python3 was already installed, 
 `python3 -c 'import secrets; print(secrets.token_hex(100))' >> .env`  
 7. Migrate your database  
 `python manage.py migrate`  
-9. Run the server. Note, to access from other machines, you'll want to add your pi's IP to your list of `ALLOWED_HOSTS`  
+8. Run the server. Note, to access from other machines, you'll want to add your pi's IP to your list of `ALLOWED_HOSTS` (example: ALLOWED_HOSTS=['192.168.88.231',])  
 `python mangage.py runserver 0.0.0.0:8000` 
+9. Test it out. In a browser (within the same network) send the request `http://192.168.88.231:8000/blink/?pin=23&blinks=5&pause=.25` Your LED connected to pin 23 should blink 5 times with a .25 second delay. 
+
+
+## Wiring example for blink.py
+Note that blue is ground, and green is the pin you want blink.py to use. I used pin 23. To find a pinout diagram, just Google `Rpi.GPIO pinout for Raspberry pi <your_revision>` 
+![IMG_20210927_231336980](https://user-images.githubusercontent.com/60068272/135017034-85df56d9-ec6b-43a3-96b6-e74554e8bc3a.jpg)
