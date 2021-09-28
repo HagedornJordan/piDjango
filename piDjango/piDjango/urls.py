@@ -36,5 +36,5 @@ urlpatterns = [
     path('refresh-token/', TokenRefreshView.as_view(), name='token_refresh'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('open-door/', views.OpenDoor.as_view()),
+    path('blink/', views.Blink.as_view()),
 ]
