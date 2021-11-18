@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [os.getenv("PI_IP"),]
 
 
 # Application definition
-
+CORS_ORIGIN_ALLOW_ALL=True
 INSTALLED_APPS = [
     'corsheaders',
     'django.contrib.admin',
@@ -140,7 +140,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.AllowAny',
-
     ),
     'DEFAULT_RENDERER_CLASSES': (
         'rest_framework.renderers.JSONRenderer',
@@ -162,6 +161,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://192.168.86.246:3000",
 ]
 
 CORS_ALLOW_CREDENTIALS = True

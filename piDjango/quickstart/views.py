@@ -6,7 +6,7 @@ from rest_framework import permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from quickstart.serializers import UserSerializer, GroupSerializer
-from .blink import blinkTest
+#from .blink import blinkTest
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -29,18 +29,14 @@ class GroupViewSet(viewsets.ModelViewSet):
 class OpenDoor(APIView) :
     permission_classes = [permissions.IsAuthenticated]
     def get(self, request, format=None):
-        print(request.user)
-        print(request)
         #print(request.auth)
-        print('here')
         return Response("h")
 
 class Blink(APIView) : 
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
     def get(self, request, format=None):
         pin = request.GET.get('pin', None)
         blinks = request.GET.get('blinks', None)
         timeBetween = request.GET.get('pause', None)
-        blinkTest(pin, blinks, timeBetween)
+        #blinkTest(pin, blinks, timeBetween)
         return Response ("just blinked!")
-
